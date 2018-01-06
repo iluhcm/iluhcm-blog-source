@@ -1,7 +1,7 @@
 ---
 title: 考拉Android客户端路由总线设计
 date: 2017-07-12 09:42:59
-tags: [Android,Router,Priority,Regular Expression]
+tags: [Android,Router,Priority,Regular Expression, Annotation, Annotation Processor]
 categories: Android
 ---
 

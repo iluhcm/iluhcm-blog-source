@@ -2,7 +2,7 @@
 title: 如何设计一个优雅健壮的Android WebView？（上）
 date: 2017-12-10 16:33:32
 categories: Android
-tags: [Android, WebView, JavaScript]
+tags: [Android, WebView, 301/302, Redirect, POST]
 ---
 
 Android应用层的开发有几大模块，其中WebView是最重要的模块之一。网上能够搜索到的WebView资料可谓寥寥，Github上的[开源项目](https://android-arsenal.com/tag/230)也不是很多，更别提有一个现成封装好的WebView容器直接用于生产环境了。本文仅当记录在使用WebView实现业务需求时所踩下的一些坑，并提供一些解决思路，避免遇到相同问题的朋友再次踩坑。**需要说明的是，本文仅提供解决思路，不提供源码。**
@@ -97,7 +97,9 @@ WebView不同的版本方法的实现是有可能不一样的，而前端一般�
 
 我相信99%的应用都会调用下面这句
 
-	WebSettings.setJavaScriptEnabled(true);
+```
+WebSettings.setJavaScriptEnabled(true);
+```
 
 在Android 4.3版本调用`WebSettings.setJavaScriptEnabled()`方法时会调用一下reload方法，同时会回调多次`WebChromeClient.onJsPrompt()`。如果有业务逻辑依赖于这两个方法，就需要注意判断回调多次是否会带来影响了。
 
@@ -144,7 +146,9 @@ WebView的301/302重定向问题，绝对在踩坑排行榜里名列前茅。。
 
 第四种情况，会遇到**无限加载登录页面的问题**。考拉的登录链接是类似下面这种格式：
 
-	https://m.kaola.com/login.html?target=登录后跳转的url
+```
+https://m.kaola.com/login.html?target=登录后跳转的url
+```
 
 如果登录成功后还重新加载这个url，那么就会循环跳转到登录页面。第四点解决起来比较简单，登录成功以后拿到target后的跳转url再重新加载即可。
 
@@ -430,11 +434,15 @@ public class KaolaWebview extends BaseWebView implements DownloadListener, Lifef
 
 一般情况下，WebView会拼接一些本地参数作为识别码传给前端，如app版本号，网络状态等，例如需要加载的url是
 
-	http://m.kaola.com?platform=android
+```
+http://m.kaola.com?platform=android
+```
 
 假设我们拼接appVersion和network，则拼接后url变成：
 
-	http://m.kaola.com?platform=android&appVersion=3.10.0&network=4g
+```
+http://m.kaola.com?platform=android&appVersion=3.10.0&network=4g
+```
 
 使用`WebView.loadUrl()`加载上面拼接好的url，随意点击这个页面上的某个链接跳转到别的页面，本地拼接的参数是不会自动带过去的。如果需要前端处理参数问题，那么如果是同域，可以通过cookie传递。非同域的话，还是需要客户端拼接参数带过去。
 
