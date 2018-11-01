@@ -10,9 +10,9 @@ categories: Android
 
 首先来看一张各个Android版本通知栏消息的全家福。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_changelog.jpg" alt="Drawing" style="width: 1000px;"/>
+<img src="http://nos.netease.com/knowledge/03b29905-8847-4d01-ba05-e4a7d2975ecf" alt="Drawing" style="width: 1000px;"/>
 
-(点击查看大图)
+[点击查看大图](http://nos.netease.com/knowledge/03b29905-8847-4d01-ba05-e4a7d2975ecf)
 
 Android通知栏从最初的Android1.1系统一直到如今的7.X版本，发生了翻天覆地的变化。从图中可以看出，1.X-2.2版本的通知栏采用了白色背景和黑色字体；2.3-4.X版本，默认背景变成了黑色，而主标题采用白色字体，内容为灰色字体。从Android5.0开始，又更改为白色背景和黑色字体。当然，这只是原生的Android系统通知栏默认颜色，许多厂商对每个Android的版本都尝试了各式各样的修改，在此不一一介绍。
 
@@ -122,7 +122,7 @@ Android 5.X系统相较于以前的版本，可以说是一个真正可以和iOS
 
 Flyme系统对原生Android源码做了修改，采用`BigPictureStyle`方式显示大图通知栏的时候，消息与大图重合了，如下图。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/魅族MX5.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/57d369b8-17fb-43d8-848f-cd4ca61d36bc?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 ### 解决方案
 
@@ -148,7 +148,7 @@ private void showBigPictureNotificationWithMZ(Context context) {
 
 当通知来的时候，如果不在通知栏浏览，会在顶部状态栏出现一个向上翻滚动画的通知消息，这条通知消息左边是一个小图标。部分系统这个小图标显示异常，是一个纯灰色的正方形，如下图。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/small_icon_exception.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/f6660662-c9d6-4982-acd8-0ef656b4abf9?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 ### <a name="小图标显示异常"></a>解决方案
 
@@ -160,7 +160,7 @@ private void showBigPictureNotificationWithMZ(Context context) {
 
 这个问题跟第二个有点类似，在7.0系统及以上，有部分应用的小图标是灰色的，大图可以正常显示。碰巧的是，显示异常的小图标，颜色都是灰色的。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_small_icon_exception_android_7.0.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/6132b911-662a-4c11-93aa-a3bc67a8f38a?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 ### 解决方案
 
@@ -175,11 +175,11 @@ private void showBigPictureNotificationWithMZ(Context context) {
 
 Android通知栏的背景色有几种情况，白色、暗色、暗色透明和黑色。如果生成的Bitmap带背景色，这个背景色就很难选择。如果选择黑色背景，那么在白色通知栏的机型上就很难看。因此不能完全在各个系统上面完美展示出来。如果不带背景色，那么字体颜色也面临同样的困惑。试想，如果在白色的背景上显示白色的文字，用户看到白茫茫一片，是什么感受？
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_remoteviews_exception.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/3ef9c8a7-134e-403d-ac21-725337be57ce?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 另一方面，大部分厂商对原生的Android系统都会有各种各样的改造，通知栏的样式也不例外。如果按照原生的样式来设计，那么在大部分国内厂商的机子上显示都和正常的普通通知栏消息不一样。例如华为6.0系统的机子，原生系统的时间线在右上角，华为的在左边，这样会给用户带来错觉。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/华为荣耀7.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/41149a26-ac47-4f06-b998-35d0c39f9fab?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 ### 解决方案
 
@@ -191,7 +191,7 @@ Android通知栏的背景色有几种情况，白色、暗色、暗色透明和�
 
 这个问题主要在部分机型的4.X系统上遇见，小图标大小没有按照`24dp`裁剪，而是采用了桌面图标一样的大小`96dp`。具体适配不正常的机型有HTC Desire 820、Lenovo A320T。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/Desire820.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/0409cd2f-4a36-498a-b9f9-d52dadad7943" alt="Drawing" style="width: 300px;"/>
 
 ### 解决方案
 
@@ -201,9 +201,9 @@ Android通知栏的背景色有几种情况，白色、暗色、暗色透明和�
 
 具体机型见下图以及后面统计的表格。顺便提下，小米是其中之一，不知道他们为什么不支持额外的这些Style。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_big_picture_style_test.jpg" alt="Drawing" style="width: 1000px;"/>
+<img src="http://nos.netease.com/knowledge/3a2b8173-17b3-4d2c-9ef4-6bfabbbf7fd1?imageView&thumbnail=980x0" alt="Drawing" style="width: 1000px;"/>
 
-(点击查看大图)
+[点击查看大图](http://nos.netease.com/knowledge/3a2b8173-17b3-4d2c-9ef4-6bfabbbf7fd1)
 
 ## 通知栏更新频率
 
@@ -221,7 +221,7 @@ Android通知栏的背景色有几种情况，白色、暗色、暗色透明和�
 
 这个坑我不愿多介绍，只说结果。但凡存在后台通知或者“守护”通知的应用，在7.0系统以后都会原形毕露。还没有适配7.0的应用，可长点心儿吧~
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_background_notification.png" alt="Drawing" style="width: 300px;"/> <img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_daemon_notification.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/def37c3a-922b-4bad-9eb9-282cd57ffb29?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/> <img src="http://nos.netease.com/knowledge/2c77535a-f8ec-4f35-a354-6b3231b8a245?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 ### 解决方案
 
@@ -301,7 +301,7 @@ public static boolean isAppInBackgroundInternal(Context context) {
 * 背景色透明，字体颜色采用系统原生的`notification_style`。
 * 背景色透明，通过特殊方式拿到通知栏字体颜色和字体大小。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_jd.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/17a4eac9-6560-423a-9581-72d2092ea4e7?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 
 其中，第一种方案简单，能够兼容所有厂商机型。例如京东固定背景色为黑色，字体为红色。这种方式的唯一缺陷是样式上不能与普通通知栏消息重合，在白色背景的通知栏上极为显眼。第二种方式，通过阅读源码可知，系统的通知栏标题和内容采用的颜色分别是`@android:color/primary_text_dark`和`@android:color/secondary_text_dark`，但踩过坑之后发现并非所有的机型默认都是这两个颜色，有可能获取不到值。因此这种方案只能作为参考，不能用于实际环境中。最后详细介绍一下第三种方式。
@@ -529,8 +529,9 @@ private interface Filter {
 
 当然这只是官方Android系统所支持的emoji版本，面对众多的厂商对源码大刀阔斧的修改，结果又是怎样呢？我们拿了33个表情来进行测试，其中大部分表情是`Unicode 6.0`标准，后面几个表情是`Unicode8.0`标准。最终得到了如下结果。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_emoji_test.jpg" alt="Drawing" style="width: 1000px;"/>
-(点击查看大图)
+<img src="http://nos.netease.com/knowledge/746731a6-c10d-4d2a-a67c-d916a0f15816" alt="Drawing" style="width: 1000px;"/>
+
+[点击查看大图](http://nos.netease.com/knowledge/746731a6-c10d-4d2a-a67c-d916a0f15816)
 
 实际测试结果与上面的表格基本匹配。特别表扬一下**魅族**，在5.X系统上就已经支持了`Unicode 8.0`标准！乐视的系统在6.0.1系统上的表现指明支持的是`Unicode 7.0`标准，实际上Android原生已经支持`Unicode 8.0`标准了。
 
@@ -540,7 +541,7 @@ private interface Filter {
 
 从上面的介绍中，大家可以发现，Android 7.0系统以后通知栏消息改版了。援引官方在`Notifications public deck`中介绍的一张图，
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_7.0_changelog.png" alt="Drawing" style="width: 1000px;"/>
+<img src="http://nos.netease.com/knowledge/f2854709-401a-4fe3-8e33-f34e136c2b5e?imageView&thumbnail=980x0" alt="Drawing" style="width: 1000px;"/>
 
 除了基本的样式发生变化，在7.0中也做了部分接口上的修改。其中，我们需要“拥抱变化”的内容有：
 
@@ -552,8 +553,8 @@ private interface Filter {
 
 5.0加入的`Notification.Builder.setColor()`方法，原本是渲染小图标的背景色的，7.0以后，改成了渲染的是通知栏消息第一行的颜色。
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_5.1_setcolor.png" alt="Drawing" style="width: 300px;"/>
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_7.0_setcolor.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/2455b615-d19c-4a30-af5e-f61eb41f5f37?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/2bc78b71-5aa2-48dc-b9f4-982c362d00cd?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 ### 7.0系统默认不显示时间
 
@@ -566,7 +567,7 @@ private interface Filter {
 * Notification.DecoratedCustomViewStyle()
 * Notification.DecoratedMediaCustomViewStyle()
 
-<img src="http://7xl6ic.com1.z0.glb.clouddn.com/img/android_notification/notification_7.0_remoteviews.png" alt="Drawing" style="width: 300px;"/>
+<img src="http://nos.netease.com/knowledge/0e2d717c-7e2c-420f-8fae-dd35478eda07?imageView&thumbnail=980x0" alt="Drawing" style="width: 300px;"/>
 
 图中是未包裹与包裹时候的展示效果。可以说适配RemoteViews是非常蛋疼的一件事，应用可以根据需要来选择是否使用`DecoratedCustomViewStyle`。
 

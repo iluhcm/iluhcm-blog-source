@@ -184,8 +184,9 @@ public static Intent startActivityByUrl(Context context, String url, boolean fro
 
 ## 路由框架
 
-![](http://7xl6ic.com1.z0.glb.clouddn.com/img/router/kaola_router_architecture.png)
-[点击查看大图](http://7xl6ic.com1.z0.glb.clouddn.com/img/router/kaola_router_architecture.png)
+ ![Alt pic](http://nos.netease.com/knowledge/0d94b9af-bb78-4a7c-9322-e23bcfec551c?imageView&thumbnail=980x0) 
+
+[点击查看大图](http://nos.netease.com/knowledge/0d94b9af-bb78-4a7c-9322-e23bcfec551c)
 
 考拉路由框架主要分为三个模块：**路由收集**、**路由初始化**以及**页面路由**。路由收集阶段，定义了基于Activity类的注解，通过`Android Processing Tool`(以下简称“APT”)收集路由信息并生成路由表类；路由初始化阶段，根据生成的路由表信息注入路由字典；页面路由阶段，则通过路由字典查找路由信息，并根据查找结果定制不同的路由策略略。
 
@@ -209,8 +210,9 @@ public static Intent startActivityByUrl(Context context, String url, boolean fro
 
 ### 接口设计
 
-![](http://7xl6ic.com1.z0.glb.clouddn.com/img/router/kaola_router.jpg)
-[点击查看大图](http://7xl6ic.com1.z0.glb.clouddn.com/img/router/kaola_router.jpg)
+ ![Alt pic](http://nos.netease.com/knowledge/130829f3-7355-44ee-af48-b2a7e8ffbbae?imageView&thumbnail=980x0) 
+
+[点击查看大图](http://nos.netease.com/knowledge/130829f3-7355-44ee-af48-b2a7e8ffbbae)
 
 一个好的模块或框架，需要事先设计好接口，预留足够的权限供调用者支配，才能满足各种各样的需求。考拉路由框架在设计过程中使用了常见的设计模式，如Builder模式、Factory模式、Wrapper模式等，并遵循了一些设计原则。（最近在看第二遍Effective Java，对以下原则深有体会，推荐看一下）
 
